@@ -47,7 +47,7 @@
   --popover: 215 21% 11%;
   --popover-foreground: 210 40% 98%;
   
-  --primary: 125 74% 70%; /* #7ee787 terminal green */
+  --primary: 210 100% 65%; /* #58a6ff blue */
   --primary-foreground: 216 28% 7%;
   
   --secondary: 213 12% 21%;
@@ -56,12 +56,12 @@
   --muted: 213 12% 21%;
   --muted-foreground: 215 14% 58%; /* #8b949e */
   
-  --accent: 125 74% 70%;
+  --accent: 210 100% 65%;
   --accent-foreground: 216 28% 7%;
   
   --border: 213 12% 21%;
   --input: 213 12% 21%;
-  --ring: 125 74% 70%;
+  --ring: 210 100% 65%;
   
   --radius: 0.5rem;
 }
@@ -89,7 +89,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-300;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-300;
   }
   
   .glass-card {
@@ -100,6 +100,6 @@
     @apply transition-all duration-300;
   }
   .hover-glow:hover {
-    @apply border-primary/50 shadow-[0_0_30px_-5px_rgba(126,231,135,0.1)];
+    @apply border-primary/50 shadow-[0_0_30px_-5px_rgba(88,166,255,0.1)];
   }
 }

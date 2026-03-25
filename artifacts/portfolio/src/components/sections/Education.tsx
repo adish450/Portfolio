@@ -28,7 +28,7 @@ export function Education() {
             <div className="bg-[#161b22] px-4 py-2 border-b border-border flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+              <div className="w-3 h-3 rounded-full bg-blue-500/80"></div>
               <span className="ml-2 font-mono text-xs text-muted-foreground">university.sh</span>
             </div>
             <CardContent className="p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 font-mono text-sm">

@@ -59,7 +59,7 @@ export function Projects() {
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-blue-500/80"></div>
                   </div>
                   <div className="font-mono text-xs text-muted-foreground">{project.title.toLowerCase().replace(' ', '-')}.sh</div>
                   <a

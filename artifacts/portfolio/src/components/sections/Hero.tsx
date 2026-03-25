@@ -38,7 +38,7 @@ export function Hero() {
               <div className="bg-[#161b22] px-4 py-2 border-b border-[#30363d] flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-blue-500/80"></div>
                 <span className="ml-2 text-muted-foreground text-xs flex items-center gap-1">
                   <Terminal size={12} /> bash
                 </span>
