@@ -1,0 +1,17 @@
+packages:
+  "framer-motion": "For premium scroll animations, page transitions, and micro-interactions"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+
+images:
+  - path: "artifacts/portfolio/public/images/hero-bg.png"
+    description: "Dark mode abstract geometric background with subtle neon cyan and deep blue glowing mesh gradients, professional tech aesthetic"
+    aspect_ratio: "16:9"
+  - path: "artifacts/portfolio/public/images/avatar-abstract.png"
+    description: "Abstract 3D rendering of an Android robot or modern smartphone silhouette in dark glowing neon colors, highly polished, dark background"
+    aspect_ratio: "1:1"
+
+notes:
+  - "The application is a single-page portfolio with smooth scrolling."
+  - "All data is hardcoded as per user instructions, no backend required."
+  - "Using framer-motion for premium scroll reveal effects."
