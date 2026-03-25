@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
-import { Cpu, Smartphone, Code2, Wrench } from "lucide-react";
+import { Cpu, Smartphone, Code2, Wrench, Layers } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function About() {
   const highlights = [
-    { icon: Smartphone, title: "Android Framework & AOSP", desc: "Deep expertise in platform-level development, system services, and HAL integration for Samsung One UI." },
+    { icon: Smartphone, title: "App Layer Development", desc: "Building polished, high-performance Android apps with Jetpack Compose, MVVM, Coroutines, Flow, Paging, and offline-first architecture." },
+    { icon: Layers, title: "Android Framework & AOSP", desc: "Platform-level engineering across application and framework layers — system services, HAL integration, and Samsung One UI contributions." },
     { icon: Cpu, title: "Performance Optimization", desc: "Reducing load times 15–20%, minimizing memory on foldable devices, and debugging ANRs with Perfetto & Android Profiler." },
-    { icon: Code2, title: "Clean Architecture", desc: "Building scalable, modular, offline-first codebases with MVVM, Clean Architecture, and SDUI patterns." },
+    { icon: Code2, title: "Clean Architecture", desc: "Designing scalable, modular, offline-first codebases with MVVM, Clean Architecture, Hilt DI, and SDUI patterns." },
     { icon: Wrench, title: "Testing & CI/CD", desc: "Automating quality with JUnit, Mockito, Espresso, GitHub Actions, Jenkins, and Fastlane release pipelines." },
   ];
 
@@ -23,11 +24,11 @@ export function About() {
           <div className="font-mono text-primary mb-4">{"<section id=\"about\">"}</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
           <p className="text-lg text-muted-foreground leading-relaxed font-sans">
-            Senior Android Engineer with 5+ years of experience building scalable Android applications and platform components. Skilled in Kotlin, Java, and Android Framework/AOSP, with expertise in MVVM, Coroutines, and performance optimization for flagship Samsung devices.
+            Senior Android Engineer with 5+ years of experience working across both the <span className="text-foreground font-medium">app layer</span> and <span className="text-foreground font-medium">Android framework/AOSP</span>. Skilled in Kotlin, Java, Jetpack Compose, and platform-level development, with a strong focus on performance optimization and scalable architecture for flagship Samsung devices.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {highlights.map((item, i) => (
             <motion.div
               key={i}
