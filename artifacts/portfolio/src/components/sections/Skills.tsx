@@ -31,7 +31,7 @@ export function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 relative bg-secondary/20">
+    <section id="skills" className="py-24 relative bg-[#0d1117] border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,8 +39,8 @@ export function Skills() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Arsenal</h2>
-          <div className="h-1 w-20 bg-primary rounded-full"></div>
+          <div className="font-mono text-primary mb-4">{"// skills.json"}</div>
+          <h2 className="text-3xl md:text-4xl font-bold">Technical Arsenal</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -52,18 +52,27 @@ export function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Card className="h-full hover:border-white/20 transition-colors">
-                <CardHeader>
-                  <CardTitle className="text-lg text-primary/90">{category.title}</CardTitle>
+              <Card className="h-full hover-glow bg-card/60">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base font-mono text-primary">
+                    <span className="text-muted-foreground mr-2">"</span>
+                    {category.title}
+                    <span className="text-muted-foreground ml-2">": [</span>
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 pl-4">
                     {category.skills.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="text-sm py-1.5 px-3">
-                        {skill}
+                      <Badge 
+                        key={skill} 
+                        variant="outline" 
+                        className="text-xs py-1 px-2.5 font-mono bg-card border-primary/30 text-foreground hover:border-primary hover:text-primary transition-colors"
+                      >
+                        "{skill}"
                       </Badge>
                     ))}
                   </div>
+                  <div className="text-muted-foreground font-mono mt-3">]</div>
                 </CardContent>
               </Card>
             </motion.div>

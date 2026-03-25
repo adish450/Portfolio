@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -13,50 +14,66 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Education", href: "#education" },
+    { name: "about()", href: "#about" },
+    { name: "skills()", href: "#skills" },
+    { name: "experience()", href: "#experience" },
+    { name: "projects()", href: "#projects" },
+    { name: "education()", href: "#education" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b border-white/10 py-4 shadow-2xl" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-mono ${
+        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border py-3 shadow-sm" : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="text-xl font-display font-bold tracking-wider text-foreground hover:text-primary transition-colors">
-          MA<span className="text-primary">.</span>
+        <a href="#" className="text-lg font-bold tracking-wider text-foreground hover:text-primary transition-colors flex items-center gap-1">
+          adish.dev<span className="w-2 h-4 bg-primary animate-pulse inline-block"></span>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               {link.name}
             </a>
           ))}
+          
+          <button 
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 text-muted-foreground hover:text-primary transition-colors"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          
           <a
             href="mailto:adishirfan17@gmail.com"
-            className="px-5 py-2.5 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-sm shadow-[0_0_15px_-3px_rgba(0,240,255,0.3)] hover:shadow-[0_0_25px_-3px_rgba(0,240,255,0.6)]"
+            className="px-4 py-2 rounded text-primary border border-primary/30 hover:bg-primary/10 transition-all duration-300 text-sm"
           >
-            Contact Me
+            contact()
           </a>
         </div>
 
         {/* Mobile Toggle */}
-        <button 
-          className="md:hidden p-2 text-foreground"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <button 
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 text-muted-foreground hover:text-primary transition-colors"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button 
+            className="p-2 text-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -66,7 +83,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-card/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+            className="md:hidden bg-card/95 backdrop-blur-xl border-b border-border overflow-hidden"
           >
             <div className="flex flex-col items-center py-6 gap-6">
               {navLinks.map((link) => (
@@ -79,6 +96,12 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
+              <a
+                href="mailto:adishirfan17@gmail.com"
+                className="px-6 py-3 rounded text-primary border border-primary/30 hover:bg-primary/10 transition-all duration-300 text-sm w-3/4 text-center"
+              >
+                contact()
+              </a>
             </div>
           </motion.div>
         )}

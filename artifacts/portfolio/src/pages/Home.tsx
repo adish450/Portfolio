@@ -6,10 +6,11 @@ import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
 import { Education } from "@/components/sections/Education";
 import { Footer } from "@/components/layout/Footer";
+import { StatusBar } from "@/components/layout/StatusBar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-background text-foreground">
+    <div className="min-h-screen flex flex-col font-sans bg-background text-foreground pb-8">
       <Navbar />
       <main className="flex-grow">
         <Hero />
@@ -20,6 +21,7 @@ export default function Home() {
         <Education />
       </main>
       <Footer />
+      <StatusBar />
     </div>
   );
 }

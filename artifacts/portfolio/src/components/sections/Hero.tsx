@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, ChevronRight } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, ChevronRight, Terminal } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 export function Hero() {
   const stats = [
@@ -10,16 +11,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img
-          src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
-          alt="Abstract background"
-          className="w-full h-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background"></div>
-      </div>
-
+    <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -29,53 +21,68 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="flex flex-col gap-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/80 border border-white/10 w-fit backdrop-blur-md">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              <span className="text-xs font-medium text-muted-foreground">Available for new opportunities</span>
+            <div className="font-mono text-muted-foreground text-sm">
+              // senior android engineer
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-              Hi, I'm <br />
-              <span className="text-gradient">Mohammad Adish</span>
+              Mohammad Adish
             </h1>
 
-            <h2 className="text-2xl sm:text-3xl text-foreground/80 font-display">
-              Senior Android Engineer
-            </h2>
+            <div className="flex items-center gap-3 text-xl sm:text-2xl font-mono text-foreground/80">
+              <span className="text-primary">{'>'}</span>
+              <span>5+ years @ Samsung R&D</span>
+            </div>
 
-            <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-              5+ years building scalable Android applications and platform components. Expert in Kotlin, Android Framework/AOSP, and modern architecture for flagship Samsung devices.
-            </p>
+            <Card className="bg-[#0d1117] border-[#30363d] font-mono text-sm mt-2 shadow-xl shadow-black/50">
+              <div className="bg-[#161b22] px-4 py-2 border-b border-[#30363d] flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                <span className="ml-2 text-muted-foreground text-xs flex items-center gap-1">
+                  <Terminal size={12} /> bash
+                </span>
+              </div>
+              <CardContent className="p-4 space-y-2">
+                <div className="text-muted-foreground">
+                  <span className="text-primary">$</span> npx mohadish
+                </div>
+                <div className="text-foreground">Loading profile... <span className="text-primary">✓</span></div>
+                <div className="text-foreground"><span className="text-primary">Role:</span> Senior Android Engineer</div>
+                <div className="text-foreground"><span className="text-primary">Stack:</span> Kotlin · AOSP · Jetpack Compose</div>
+                <div className="text-foreground"><span className="text-primary">Status:</span> Available for opportunities <span className="text-primary">✓</span></div>
+                <div className="animate-pulse text-primary">_</div>
+              </CardContent>
+            </Card>
 
-            <div className="flex flex-wrap gap-4 mt-4">
-              <a
-                href="mailto:adishirfan17@gmail.com"
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_-5px_rgba(0,240,255,0.5)]"
-              >
-                <Mail size={20} />
-                Email Me
-              </a>
+            <div className="flex flex-wrap gap-4 mt-4 font-mono">
               <a
                 href="#projects"
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-foreground font-semibold hover:bg-secondary/80 border border-white/10 hover:scale-105 transition-all duration-300"
+                className="flex items-center gap-2 px-6 py-3 rounded bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300"
               >
                 View Projects
-                <ChevronRight size={20} />
+                <ChevronRight size={18} />
+              </a>
+              <a
+                href="#experience"
+                className="flex items-center gap-2 px-6 py-3 rounded bg-card text-foreground font-semibold hover:bg-secondary/80 border border-border transition-all duration-300"
+              >
+                Download Resume
               </a>
             </div>
 
-            <div className="flex items-center gap-6 mt-6">
-              <a href="https://linkedin.com/in/mohammad-adish" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
-                <Linkedin size={24} />
+            <div className="flex items-center gap-6 mt-4">
+              <a href="https://linkedin.com/in/mohammad-adish" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-white/5">
+                <Linkedin size={20} />
               </a>
-              <a href="https://github.com/adish450" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
-                <Github size={24} />
+              <a href="https://github.com/adish450" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-white/5">
+                <Github size={20} />
               </a>
-              <a href="tel:+918826150973" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
-                <Phone size={24} />
+              <a href="mailto:adishirfan17@gmail.com" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-white/5">
+                <Mail size={20} />
+              </a>
+              <a href="tel:+918826150973" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded hover:bg-white/5">
+                <Phone size={20} />
               </a>
             </div>
           </motion.div>
@@ -84,14 +91,19 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="relative hidden lg:flex justify-center"
           >
-            <div className="absolute inset-0 bg-primary/20 rounded-full blur-[100px] -z-10"></div>
-            <img
-              src={`${import.meta.env.BASE_URL}images/avatar-abstract.png`}
-              alt="Abstract Android Tech"
-              className="w-full max-w-md mx-auto object-cover rounded-3xl border border-white/10 shadow-2xl shadow-primary/20"
-            />
+            <div className="relative w-full max-w-md">
+              <div className="absolute inset-0 bg-primary/10 rounded-full blur-[100px] -z-10"></div>
+              <img
+                src={`${import.meta.env.BASE_URL}images/avatar-abstract.png`}
+                alt="Abstract Android Tech"
+                className="w-full h-auto object-cover rounded-2xl border border-border shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
+              />
+              <div className="absolute -bottom-4 -right-4 p-4 bg-card border border-border rounded shadow-xl font-mono text-xs text-primary">
+                {"<developer />"}
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -99,12 +111,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 border-t border-white/10 pt-12 pb-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 border-t border-border pt-12 pb-8"
         >
           {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col gap-2 border-l border-white/10 pl-6">
-              <span className="text-4xl font-bold font-display text-foreground">{stat.value}</span>
-              <span className="text-sm text-muted-foreground font-medium uppercase tracking-wider">{stat.label}</span>
+            <div key={i} className="flex flex-col gap-2 border-l border-border pl-6">
+              <span className="text-3xl font-bold font-mono text-primary">{stat.value}</span>
+              <span className="text-sm text-muted-foreground font-mono">{stat.label}</span>
             </div>
           ))}
         </motion.div>

@@ -11,17 +11,18 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-24 relative border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="max-w-3xl mx-auto mb-16"
         >
+          <div className="font-mono text-primary mb-4">{"<section id=\"about\">"}</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed font-sans">
             Senior Android Engineer with 5+ years of experience building scalable Android applications and platform components. Skilled in Kotlin, Java, and Android Framework/AOSP, with expertise in MVVM, Coroutines, and performance optimization for flagship Samsung devices.
           </p>
         </motion.div>
@@ -35,18 +36,19 @@ export function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Card className="h-full hover-glow bg-secondary/30">
+              <Card className="h-full hover-glow bg-card/50">
                 <CardContent className="p-6 flex flex-col items-start gap-4">
-                  <div className="p-3 rounded-xl bg-primary/10 text-primary">
-                    <item.icon size={28} />
+                  <div className="p-3 rounded bg-primary/10 text-primary border border-primary/20">
+                    <item.icon size={24} />
                   </div>
-                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <h3 className="text-lg font-bold font-mono">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
+        <div className="font-mono text-primary mt-16 text-right">{"</section>"}</div>
       </div>
     </section>
   );

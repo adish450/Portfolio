@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import { GitCommit, Terminal } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function Experience() {
@@ -8,6 +8,7 @@ export function Experience() {
       role: "Lead Software Development Engineer – Android",
       company: "Samsung R&D, Noida",
       duration: "Mar 2024 – Present",
+      hash: "a3f7b2c",
       bullets: [
         "Developing and maintaining Wallpaper platform modules (DressRoom, Dynamic Lock Screen, Sprite Wallpaper, Wallpaper Framework), working across application and Android framework layers for flagship Samsung devices.",
         "Improved wallpaper rendering and resource handling, reducing average load time by 15–20% and optimizing memory usage on foldable devices through framework-level changes.",
@@ -19,6 +20,7 @@ export function Experience() {
       role: "Software Development Engineer – Android",
       company: "Samsung R&D, Noida",
       duration: "Feb 2021 – Feb 2024",
+      hash: "8f92d1e",
       bullets: [
         "Developed and maintained core Android Settings modules, including Connections and General Management, integrating AOSP components into Samsung One UI.",
         "Implemented features such as on-demand language installation and customizable keys menu, improving user workflows and reducing navigation time by 20–30%.",
@@ -29,19 +31,19 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-24 relative">
+    <section id="experience" className="py-24 relative border-t border-border">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-            <Briefcase className="text-primary" size={32} />
-            Work Experience
-          </h2>
-          <p className="text-muted-foreground">My professional journey in enterprise Android development.</p>
+          <div className="font-mono text-primary mb-4 flex items-center gap-2">
+            <Terminal size={16} /> 
+            <span>$ git log --oneline --decorate</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold">Experience</h2>
         </motion.div>
 
         <div className="space-y-12">
@@ -54,25 +56,25 @@ export function Experience() {
               transition={{ duration: 0.6, delay: i * 0.2 }}
               className="relative pl-8 md:pl-0"
             >
-              <div className="hidden md:block absolute left-[-41px] top-2 bottom-[-48px] w-px bg-white/10 last:hidden"></div>
-              <div className="absolute left-[-5px] md:left-[-46px] top-2 w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+              <div className="hidden md:block absolute left-[-24px] top-4 bottom-[-48px] w-px bg-border last:hidden"></div>
+              
+              <div className="hidden md:flex absolute left-[-32px] top-4 w-4 h-4 rounded-full bg-card border-2 border-primary items-center justify-center">
+                <div className="w-1 h-1 bg-primary rounded-full"></div>
+              </div>
 
-              <Card className="hover-glow bg-gradient-to-br from-card/80 to-card/20">
-                <CardContent className="p-6 md:p-8">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                    <div>
-                      <h3 className="text-2xl font-bold text-foreground mb-1">{exp.role}</h3>
-                      <p className="text-lg font-medium text-primary">{exp.company}</p>
-                    </div>
-                    <span className="px-4 py-1.5 rounded-full bg-secondary/80 text-sm font-medium border border-white/5 whitespace-nowrap">
-                      {exp.duration}
-                    </span>
+              <Card className="hover-glow bg-card font-mono text-sm border-border">
+                <CardContent className="p-6">
+                  <div className="mb-4 space-y-1 border-b border-border pb-4">
+                    <div className="text-yellow-400">commit {exp.hash}</div>
+                    <div><span className="text-muted-foreground">Author:</span> Mohammad Adish {"<adishirfan17@gmail.com>"}</div>
+                    <div><span className="text-muted-foreground">Date:  </span> {exp.duration}</div>
+                    <div className="mt-2 text-foreground font-bold font-sans text-lg">{exp.role} @ {exp.company}</div>
                   </div>
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 mt-4 font-sans text-sm">
                     {exp.bullets.map((bullet, j) => (
                       <li key={j} className="flex gap-3 text-muted-foreground">
-                        <span className="text-primary mt-1.5 text-xs">◆</span>
+                        <span className="text-primary font-mono mt-0.5 shrink-0">+</span>
                         <span className="leading-relaxed">{bullet}</span>
                       </li>
                     ))}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, Terminal } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -30,17 +30,19 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 relative bg-secondary/20">
+    <section id="projects" className="py-24 relative bg-[#0d1117] border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 flex flex-col items-center text-center"
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <div className="h-1 w-20 bg-primary rounded-full mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl">Personal projects demonstrating expertise in modern Android development architectures, Jetpack libraries, and offline-first design.</p>
+          <div className="font-mono text-primary mb-4 flex items-center gap-2">
+            <Terminal size={16} /> 
+            <span>$ ls -la ./projects</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -52,37 +54,41 @@ export function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
             >
-              <Card className="h-full flex flex-col hover-glow bg-card/60">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
-                      <SmartphoneIcon />
-                    </div>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-2 text-muted-foreground hover:text-primary transition-colors hover:bg-primary/10 rounded-full"
-                    >
-                      <Github size={24} />
-                    </a>
+              <Card className="h-full flex flex-col hover-glow bg-card border-border overflow-hidden">
+                <div className="bg-[#161b22] px-4 py-2 border-b border-border flex items-center gap-2 justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                   </div>
-                  <CardTitle className="text-2xl mb-2">{project.title}</CardTitle>
-                  <p className="text-foreground/90 font-medium">{project.description}</p>
+                  <div className="font-mono text-xs text-muted-foreground">{project.title.toLowerCase().replace(' ', '-')}.sh</div>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Github size={16} />
+                  </a>
+                </div>
+                
+                <CardHeader className="pt-6">
+                  <CardTitle className="text-2xl font-bold font-sans">{project.title}</CardTitle>
+                  <p className="text-muted-foreground text-sm font-mono mt-2">{project.description}</p>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <ul className="space-y-2">
+                  <ul className="space-y-3 font-sans text-sm">
                     {project.highlights.map((point, j) => (
-                      <li key={j} className="flex gap-3 text-muted-foreground text-sm">
-                        <span className="text-primary mt-1 text-xs shrink-0">◆</span>
+                      <li key={j} className="flex gap-3 text-muted-foreground">
+                        <span className="text-primary font-mono mt-0.5 shrink-0">{'>'}</span>
                         <span className="leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter className="flex flex-wrap gap-2 pt-6 border-t border-white/5">
+                <CardFooter className="flex flex-wrap gap-2 pt-6 border-t border-border/50 bg-black/20">
                   {project.tech.map((t) => (
-                    <Badge key={t} variant="outline" className="bg-background/50 border-white/10">
+                    <Badge key={t} variant="outline" className="bg-transparent border-primary/20 text-muted-foreground font-mono text-xs">
                       {t}
                     </Badge>
                   ))}
@@ -93,14 +99,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  );
-}
-
-function SmartphoneIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
-      <path d="M12 18h.01"/>
-    </svg>
   );
 }
