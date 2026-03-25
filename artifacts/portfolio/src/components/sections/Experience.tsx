@@ -9,11 +9,10 @@ export function Experience() {
       company: "Samsung R&D, Noida",
       duration: "Mar 2024 – Present",
       bullets: [
-        "Led new UI/UX feature development in system apps used by 50M+ global users, improving load times by 25% and reducing crash rates by 15%.",
-        "Migrated legacy modules to MVVM + Coroutines, improving maintainability and enabling safer asynchronous code.",
-        "Increased testability by adding JUnit, Mockito unit tests and Espresso UI tests into the release pipeline.",
-        "Streamlined app validation processes through automated testing and internal scripts, catching bugs earlier.",
-        "Collaborated with product and UX teams to deliver stable releases across 5+ device categories including foldable and flip models.",
+        "Developing and maintaining Wallpaper platform modules (DressRoom, Dynamic Lock Screen, Sprite Wallpaper, Wallpaper Framework), working across application and Android framework layers for flagship Samsung devices.",
+        "Improved wallpaper rendering and resource handling, reducing average load time by 15–20% and optimizing memory usage on foldable devices through framework-level changes.",
+        "Resolved 200+ production issues and delivered 80+ code changes supporting One UI 8.0 (Android 16) across multiple device categories including foldable and flip models.",
+        "Collaborated with cross-functional teams (HQ, UX, QA) to stabilize wallpaper features across releases, improving reliability and reducing crash occurrences in production.",
       ]
     },
     {
@@ -21,11 +20,10 @@ export function Experience() {
       company: "Samsung R&D, Noida",
       duration: "Feb 2021 – Feb 2024",
       bullets: [
-        "Implemented on-demand language installation in Android apps, reducing setup steps by 40% and enabling seamless multilingual support.",
-        "Designed and optimized password storage and autofill workflows, improving user convenience and login efficiency.",
-        "Developed a customizable keys menu with lazy loading and optimized navigation, achieving 30% faster menu access.",
-        "Reduced memory usage by 20% on low-end devices and enhanced UI/UX, improving app responsiveness and reducing ANRs.",
-        "Leveraged MVVM architecture and Kotlin Coroutines to build maintainable, asynchronous, high-performance Android applications.",
+        "Developed and maintained core Android Settings modules, including Connections and General Management, integrating AOSP components into Samsung One UI.",
+        "Implemented features such as on-demand language installation and customizable keys menu, improving user workflows and reducing navigation time by 20–30%.",
+        "Optimized performance and memory usage of system applications, reducing memory footprint by 15–20% on low-end devices and improving responsiveness.",
+        "Built and maintained unit/UI test coverage using JUnit, Mockito, Espresso, reducing regressions and improving release stability across multiple device variants.",
       ]
     }
   ];
@@ -56,10 +54,7 @@ export function Experience() {
               transition={{ duration: 0.6, delay: i * 0.2 }}
               className="relative pl-8 md:pl-0"
             >
-              {/* Timeline line for desktop */}
               <div className="hidden md:block absolute left-[-41px] top-2 bottom-[-48px] w-px bg-white/10 last:hidden"></div>
-              
-              {/* Timeline dot */}
               <div className="absolute left-[-5px] md:left-[-46px] top-2 w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
 
               <Card className="hover-glow bg-gradient-to-br from-card/80 to-card/20">
@@ -73,7 +68,7 @@ export function Experience() {
                       {exp.duration}
                     </span>
                   </div>
-                  
+
                   <ul className="space-y-3">
                     {exp.bullets.map((bullet, j) => (
                       <li key={j} className="flex gap-3 text-muted-foreground">

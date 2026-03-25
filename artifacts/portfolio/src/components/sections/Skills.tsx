@@ -6,19 +6,19 @@ export function Skills() {
   const skillCategories = [
     {
       title: "Languages",
-      skills: ["Kotlin", "Java", "C++"],
+      skills: ["Kotlin", "Java", "C++", "Python"],
     },
     {
       title: "Architecture & Design",
-      skills: ["MVVM", "Clean Architecture", "Modularization"],
+      skills: ["MVVM", "Clean Architecture", "Modularization", "Offline-first Architecture", "SDUI (Server-Driven UI)"],
     },
     {
       title: "Android & Frameworks",
-      skills: ["Jetpack Compose", "Coroutines", "Flow", "LiveData", "ViewModel", "Navigation Component"],
+      skills: ["Android Framework", "AOSP", "System Services", "Jetpack Compose", "Coroutines", "Flow", "Paging"],
     },
     {
       title: "Networking & Databases",
-      skills: ["Retrofit", "OkHttp", "Room", "SQLite", "SharedPreferences"],
+      skills: ["Retrofit", "OkHttp", "Room", "SQLite", "DataStore"],
     },
     {
       title: "Testing & CI/CD",
@@ -26,7 +26,7 @@ export function Skills() {
     },
     {
       title: "Tools & Optimization",
-      skills: ["Hilt", "Dagger 2", "Crashlytics", "LeakCanary", "Git", "Performance Tuning", "ANR Reduction", "Analytics"],
+      skills: ["Hilt", "Dagger 2", "Crashlytics", "LeakCanary", "Perfetto", "Android Profiler", "Git", "ANR/Crash Debugging", "HAL (Hardware Abstraction Layer)", "IPC (Binder)", "Analytics"],
     },
   ];
 

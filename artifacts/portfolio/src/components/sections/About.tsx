@@ -4,16 +4,16 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export function About() {
   const highlights = [
-    { icon: Smartphone, title: "Modern UI/UX", desc: "Crafting beautiful, responsive interfaces using Jetpack Compose." },
-    { icon: Cpu, title: "Performance First", desc: "Optimizing memory, reducing ANRs, and delivering buttery smooth 60fps." },
-    { icon: Code2, title: "Clean Architecture", desc: "Building scalable, maintainable modular codebases with MVVM." },
-    { icon: Wrench, title: "Testing & CI/CD", desc: "Automating quality with robust unit, UI tests, and release pipelines." },
+    { icon: Smartphone, title: "Android Framework & AOSP", desc: "Deep expertise in platform-level development, system services, and HAL integration for Samsung One UI." },
+    { icon: Cpu, title: "Performance Optimization", desc: "Reducing load times 15–20%, minimizing memory on foldable devices, and debugging ANRs with Perfetto & Android Profiler." },
+    { icon: Code2, title: "Clean Architecture", desc: "Building scalable, modular, offline-first codebases with MVVM, Clean Architecture, and SDUI patterns." },
+    { icon: Wrench, title: "Testing & CI/CD", desc: "Automating quality with JUnit, Mockito, Espresso, GitHub Actions, Jenkins, and Fastlane release pipelines." },
   ];
 
   return (
     <section id="about" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -22,7 +22,7 @@ export function About() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Senior Android Engineer with 4+ years of experience building high-performance, user-friendly Android applications for global users. Skilled in Kotlin, Java, and modern architectures like MVVM and Clean Architecture. Experienced in Jetpack Compose, Coroutines, Room, Retrofit, and modular app design to deliver scalable, maintainable, and high-quality apps with optimized performance.
+            Senior Android Engineer with 5+ years of experience building scalable Android applications and platform components. Skilled in Kotlin, Java, and Android Framework/AOSP, with expertise in MVVM, Coroutines, and performance optimization for flagship Samsung devices.
           </p>
         </motion.div>
 
