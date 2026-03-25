@@ -16,6 +16,14 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## GitHub Repository
+
+- **Repo**: https://github.com/adish450/Portfolio
+- **Branch**: `main`
+- **Auth**: `GITHUB_PERSONAL_ACCESS_TOKEN` secret (stored in Replit secrets)
+- **Push command**: `git push "https://${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/adish450/Portfolio.git" HEAD:main`
+- Note: GitHub OAuth integration was dismissed; PAT-based push is used instead.
+
 ## Structure
 
 ```text
