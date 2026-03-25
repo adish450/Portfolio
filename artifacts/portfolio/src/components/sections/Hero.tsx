@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, ChevronRight, Terminal } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, ChevronRight, Terminal, Download } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function Hero() {
@@ -64,9 +64,11 @@ export function Hero() {
                 <ChevronRight size={18} />
               </a>
               <a
-                href="#experience"
+                href={`${import.meta.env.BASE_URL}Mohammad_Adish_Resume.pdf`}
+                download="Mohammad_Adish_Resume.pdf"
                 className="flex items-center gap-2 px-6 py-3 rounded bg-card text-foreground font-semibold hover:bg-secondary/80 border border-border transition-all duration-300"
               >
+                <Download size={18} />
                 Download Resume
               </a>
             </div>
