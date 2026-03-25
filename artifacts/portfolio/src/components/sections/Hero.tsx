@@ -5,8 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 export function Hero() {
   const stats = [
     { value: "5+", label: "Years Experience" },
-    { value: "200+", label: "Production Issues Resolved" },
-    { value: "80+", label: "Code Changes (One UI 8.0)" },
+    { value: "400+", label: "Production Issues Resolved" },
+    { value: "100+", label: "Code Changes" },
     { value: "9.64", label: "CGPA / 10" },
   ];
 
