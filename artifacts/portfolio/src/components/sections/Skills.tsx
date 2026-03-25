@@ -10,7 +10,7 @@ export function Skills() {
     },
     {
       title: "Architecture & Design",
-      skills: ["MVVM", "Clean Architecture", "Modularization", "Offline-first Architecture", "SDUI (Server-Driven UI)"],
+      skills: ["MVVM", "Clean Architecture", "Modularization", "Offline-first Architecture", "SDUI (Server-Driven UI)", "State Management"],
     },
     {
       title: "Android & Frameworks",
@@ -18,15 +18,19 @@ export function Skills() {
     },
     {
       title: "Networking & Databases",
-      skills: ["Retrofit", "OkHttp", "Room", "SQLite", "DataStore"],
+      skills: ["REST APIs", "Retrofit", "OkHttp", "Room", "SQLite", "DataStore", "Caching Strategies"],
+    },
+    {
+      title: "Concurrency & Performance",
+      skills: ["Multithreading", "Concurrency", "Performance Tuning", "Memory Optimization", "ANR/Crash Debugging", "Perfetto", "Android Profiler"],
     },
     {
       title: "Testing & CI/CD",
       skills: ["JUnit", "Mockito", "Espresso", "GitHub Actions", "Jenkins", "Fastlane"],
     },
     {
-      title: "Tools & Optimization",
-      skills: ["Hilt", "Dagger 2", "Crashlytics", "LeakCanary", "Perfetto", "Android Profiler", "Git", "ANR/Crash Debugging", "HAL (Hardware Abstraction Layer)", "IPC (Binder)", "Analytics"],
+      title: "Tools & Others",
+      skills: ["Hilt/Dagger (DI)", "Firebase (Analytics, Crashlytics)", "LeakCanary", "Git", "HAL (Hardware Abstraction Layer)", "IPC (Binder)"],
     },
   ];
 
@@ -43,7 +47,7 @@ export function Skills() {
           <h2 className="text-3xl md:text-4xl font-bold">Technical Arsenal</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {skillCategories.map((category, i) => (
             <motion.div
               key={i}
